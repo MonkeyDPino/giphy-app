@@ -1,0 +1,26 @@
+:root {
+  --gridList-column: 250px;
+  --gridList-rows: 250px;
+  --gridList-gap: 6px;
+  --column-count:3;
+}
+.List__container {
+    margin-top:1rem;
+    /* display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
+    grid-auto-rows: var(--gridList-rows);
+    grid-template-rows: masonry;
+    grid-auto-flow: row dense;
+    grid-gap: var(--gridList-gap, 6px);
+    gap: var(--gridList-gap, 6px);
+    align-items: center; */
+    column-count: var(--column-count);
+    column-gap: 0.5em;
+}
+
+@media (max-width: 700px) {
+    :root {
+        --column-count:2;
+      }
+}
