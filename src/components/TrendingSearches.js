@@ -16,7 +16,6 @@ function LazyTrendingSearch(){
     const [show,setShow] = useState(false)
     
     const onChange = (entries) =>{
-        console.log(entries[0])
         if(entries[0].isIntersecting)setShow(true)
     }
 
