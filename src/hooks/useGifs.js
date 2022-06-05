@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GetGifs from "../services/getGifs";
+import GetGifs from "services/getGifs";
 
 function useGifs({ keyword } = { keyword: null }) {
   const [gifs, setGifs] = useState([]);

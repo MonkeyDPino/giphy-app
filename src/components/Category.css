@@ -1,0 +1,15 @@
+/* CSS by GenerateCSS.com */
+.category ul {
+    list-style-type: inherit;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.category li {
+    font-size: 20px;
+    color: #fff;
+}
+.category li a{
+    color: #fff;
+}

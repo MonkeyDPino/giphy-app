@@ -4,6 +4,9 @@
   --gridList-gap: 6px;
   --column-count:3;
 }
+.ListOfGifs{
+  min-height:100vh;
+}
 .List__container {
     margin-top:1rem;
     /* display: grid;

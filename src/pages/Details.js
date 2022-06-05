@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import StaticContext from "../context/StaticContext"
+import StaticContext from "context/StaticContext"
 
 function DetailsGif({ params}) {
     const context = useContext(StaticContext)

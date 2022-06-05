@@ -1,10 +1,9 @@
-import "./App.css";
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import DetailsGif from "./pages/Details";
+import "App.css";
+import Home from "pages/Home";
+import Search from "pages/Search";
+import DetailsGif from "pages/Details";
 import { Link, Route } from "wouter";
-import StaticContext from "./context/StaticContext";
-import StaticContext from "./context/StaticContext";
+import StaticContext from "context/StaticContext";
 
 function App() {
   return (
