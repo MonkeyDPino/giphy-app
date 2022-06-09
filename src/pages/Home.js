@@ -3,7 +3,7 @@ import { useState} from "react";
 import ListOfGifs from "components/ListOfGifs";
 import useGifs from "hooks/useGifs";
 import Category from "components/Category";
-import TrendingSearches from "components/TrendingSearches"
+import TrendingSearchesLazy from "components/TrendingSearchesLazy"
 import "./Home.css"
 
 const popular_gifs = ["one piece", "naruto", "bleach"];
@@ -43,7 +43,7 @@ function Home() {
           name="Gifs Populares"
           keywords={popular_gifs}
           />
-          <TrendingSearches/>
+          <TrendingSearchesLazy/>
         </div>
       </div>
     </>
