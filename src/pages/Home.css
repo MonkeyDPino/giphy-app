@@ -1,6 +1,7 @@
+
 .home__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .home__trends {
@@ -24,9 +25,15 @@
     outline:none;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
     .home__container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+    }
+    .home__trends {
+        width: 25%;
+    }
+    .home__Search{
+        width: 75%;
     }
 }

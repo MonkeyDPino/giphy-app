@@ -12,7 +12,7 @@ function Home() {
   const [keyword, setKeyword] = useState("");
   // eslint-disable-next-line
   const [path, pushLocation] = useLocation();
-  const { loading, gifs } = useGifs();
+  const { loading, gifs } = useGifs({limit:10});
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,6 +32,7 @@ function Home() {
           value={keyword}
           onChange={handleChange}
         />
+        <button className="search__button">Buscar</button>
       </form>
       <div className="home__container">
         <div className="home__Search">
