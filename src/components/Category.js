@@ -1,4 +1,5 @@
 import "./Category.css"
+import {memo} from "react";
 import { Link } from "wouter";
 function Category({keywords,name}) {
   return (
@@ -15,4 +16,4 @@ function Category({keywords,name}) {
   );
 }
 
-export default Category;
+export default memo(Category);

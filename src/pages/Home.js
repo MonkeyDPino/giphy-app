@@ -1,50 +1,26 @@
-import { useLocation } from "wouter";
-import { useState} from "react";
 import ListOfGifs from "components/ListOfGifs";
 import useGifs from "hooks/useGifs";
 import Category from "components/Category";
-import TrendingSearchesLazy from "components/TrendingSearchesLazy"
-import "./Home.css"
+import TrendingSearchesLazy from "components/TrendingSearchesLazy";
+import "./Home.css";
+import SearchForm from "components/SearchForm";
 
-const popular_gifs = ["one piece", "naruto", "bleach"];
+const popular_gifs = ["one piece", "naruto", "black clover"];
 
 function Home() {
-  const [keyword, setKeyword] = useState("");
-  // eslint-disable-next-line
-  const [path, pushLocation] = useLocation();
-  const { loading, gifs } = useGifs({limit:10});
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    pushLocation(`/search/${keyword}`);
-  };
-  const handleChange = (event) => {
-    setKeyword(event.target.value);
-  };
+  const { loading, gifs } = useGifs({ limit: 10 });
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-        className="search__input"
-          placeholder="Buscate un gif"
-          type="text"
-          value={keyword}
-          onChange={handleChange}
-        />
-        <button className="search__button">Buscar</button>
-      </form>
+      <SearchForm />
       <div className="home__container">
         <div className="home__Search">
           <h3 className="home__title">Última Busqueda</h3>
           <ListOfGifs loading={loading} gifs={gifs} />
         </div>
         <div className="home__trends">
-          <Category
-          name="Gifs Populares"
-          keywords={popular_gifs}
-          />
-          <TrendingSearchesLazy/>
+          <Category name="Gifs Populares" keywords={popular_gifs} />
+          <TrendingSearchesLazy />
         </div>
       </div>
     </>

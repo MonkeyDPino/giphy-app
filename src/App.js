@@ -17,7 +17,7 @@ function App() {
         <Suspense fallback={null}>
           <section className="App-content">
             <Link to="/">
-              <img className="App__logo" alt="Logo" src="/logo.png" />
+              <img className="App__logo" alt="Logo" src="/logo3.png" />
             </Link>
             <Route path="/" component={Home} />
             <Route path="/gif/:id" component={DetailsGif} />
