@@ -14,6 +14,7 @@ function Search({ params }) {
     extRef: loading ? null : extRef,
     once: false,
   });
+  // eslint-disable-next-line
   const debounceNextPage = useCallback(
     throttle(
       () => {

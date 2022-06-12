@@ -3,7 +3,7 @@ import "App.css";
 // import Search from "pages/Search";
 // import DetailsGif from "pages/Details";
 import { Link, Route } from "wouter";
-import StaticContext from "context/StaticContext";
+import gifContext from "context/GifsContext";
 import { Suspense, lazy } from "react";
 
 const Search = lazy(() => import("pages/Search"));
@@ -12,7 +12,7 @@ const Home = lazy(() => import("pages/Home"));
 
 function App() {
   return (
-    <StaticContext.Provider value={{ name: "Juan" }}>
+    <gifContext.Provider value={null}>
       <div className="App">
         <Suspense fallback={null}>
           <section className="App-content">
@@ -25,7 +25,7 @@ function App() {
           </section>
         </Suspense>
       </div>
-    </StaticContext.Provider>
+    </gifContext.Provider>
   );
 }
 
