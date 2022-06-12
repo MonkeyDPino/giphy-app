@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { useState, memo } from "react";
-import "components/SearchForm.css"
+import "components/SearchForm.css";
 
 function SearchForm() {
   // eslint-disable-next-line
@@ -15,16 +15,18 @@ function SearchForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        className="search__input"
-        placeholder="Buscate un gif"
-        type="text"
-        value={keyword}
-        onChange={handleChange}
-      />
-      <button className="search__button">Buscar </button>
-    </form>
+    <div className="block">
+      <form onSubmit={handleSubmit} className="search__form">
+        <input
+          className="search__input"
+          placeholder="Buscate un gif"
+          type="text"
+          value={keyword}
+          onChange={handleChange}
+        />
+        <button className="search__button">Buscar </button>
+      </form>
+    </div>
   );
 }
 

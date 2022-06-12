@@ -16,7 +16,7 @@ function App() {
       <div className="App">
         <Suspense fallback={null}>
           <section className="App-content">
-            <Link to="/">
+            <Link to="/" className="App__link">
               <img className="App__logo" alt="Logo" src="/logo3.png" />
             </Link>
             <Route path="/" component={Home} />

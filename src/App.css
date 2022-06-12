@@ -9,6 +9,11 @@
   min-height: 100vh;
 }
 
-.App-content a{
+.App__link{
   text-decoration: none;
+  display:block
+}
+.App__logo{
+  display:block;
+  margin:auto;
 }

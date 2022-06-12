@@ -4,6 +4,7 @@ import Category from "components/Category";
 import TrendingSearchesLazy from "components/TrendingSearchesLazy";
 import "./Home.css";
 import SearchForm from "components/SearchForm";
+import Title from "components/Title";
 
 const popular_gifs = ["one piece", "naruto", "black clover"];
 
@@ -12,6 +13,7 @@ function Home() {
 
   return (
     <>
+    <Title title="Home | Giphy"/>
       <SearchForm />
       <div className="home__container">
         <div className="home__Search">

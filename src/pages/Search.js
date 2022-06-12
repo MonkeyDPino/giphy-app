@@ -4,6 +4,7 @@ import useNearScreen from "hooks/useNearScreen";
 import { useCallback, useRef, useEffect } from "react";
 import "pages/Search.css";
 import throttle from "just-throttle";
+import Title from "components/Title";
 
 function Search({ params }) {
   const { keyword } = params;
@@ -34,6 +35,7 @@ function Search({ params }) {
 
   return (
     <>
+      <Title title={`${decodeURI(keyword)} | Giphy`}/>
       <h3>{decodeURI(keyword)}</h3>
       <ListOfGifs loading={loading} gifs={gifs} loadingNext={loadingNext} />
       <div className="sapo" ref={extRef}></div>
