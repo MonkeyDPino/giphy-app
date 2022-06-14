@@ -1,23 +1,26 @@
 .App {
   text-align: center;
 }
+
 .App-content {
-  background-color: #282c34;
+  background: rgb(36, 0, 0);
+  background: linear-gradient(354deg, rgba(36, 0, 0, 1) 0%, rgba(255, 2, 2, 1) 0%, rgba(245, 215, 217, 1) 100%);
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 1rem;
   min-height: 100vh;
 }
 
-.App__link{
+.App__link {
   text-decoration: none;
-  display:block
-}
-.App__logo{
-  display:block;
-  margin:auto;
+  display: block
 }
 
-.App-content a{
+.App__logo {
+  display: block;
+  margin: auto;
+}
+
+.App-content a {
   text-decoration: none;
 }

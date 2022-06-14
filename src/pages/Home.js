@@ -6,7 +6,7 @@ import "./Home.css";
 import SearchForm from "components/SearchForm";
 import Title from "components/Title";
 
-const popular_gifs = ["one piece", "naruto", "black clover"];
+const popular_gifs = ["one piece", "naruto", "dragon ball"];
 
 function Home() {
   const { loading, gifs } = useGifs({ limit: 10 });
