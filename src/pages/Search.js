@@ -37,7 +37,7 @@ function Search({ params }) {
   return (
     <>
       <Title title={`${decodeURI(keyword)} | Giphy`} />
-      <SearchForm />
+      <SearchForm initialKeyword={keyword} initialRating={rating} />
       <h3>{decodeURI(keyword)}</h3>
       <ListOfGifs loading={loading} gifs={gifs} loadingNext={loadingNext} />
       <div className="sapo" ref={extRef}></div>

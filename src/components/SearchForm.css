@@ -19,8 +19,11 @@
     display:flex;
 }
 
+
 .search__form{
     margin:auto;
+    display:flex;
+    flex-wrap: nowrap;
 }
 
 .search__button {
