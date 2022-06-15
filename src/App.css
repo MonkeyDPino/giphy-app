@@ -3,8 +3,8 @@
 }
 
 .App-content {
-  background: rgb(36, 0, 0);
-  background: linear-gradient(354deg, rgba(36, 0, 0, 1) 0%, rgba(255, 2, 2, 1) 0%, rgba(245, 215, 217, 1) 100%);
+  background: rgb(255, 91, 91);
+  background: linear-gradient(356deg, rgba(255, 91, 91, 1) 0%, rgba(255, 130, 130, 1) 4%, rgba(255, 170, 176, 1) 7%);
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 1rem;

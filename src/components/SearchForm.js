@@ -60,7 +60,7 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
           value={state.keyword}
           onChange={handleChange}
         />
-        <select onChange={handleChangeRating} value={state.rating}>
+        <select onChange={handleChangeRating} className="search__select" value={state.rating}>
           <option disabled>Selecciona el rating</option>
           {RATINGS.map((rating) => (
             <option key={rating} value={rating}>
