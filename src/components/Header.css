@@ -1,0 +1,29 @@
+.gf__header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gf__header a {
+    font-size: 16px;
+    color: #fff;
+}
+
+.gf__header a:hover {
+    text-decoration: underline;
+}
+
+.header__logout {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.header__logout:hover{
+    text-decoration: underline;
+}
+

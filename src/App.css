@@ -3,8 +3,8 @@
 }
 
 .App-content {
-  background: rgb(255, 91, 91);
-  background: linear-gradient(356deg, rgba(255, 91, 91, 1) 0%, rgba(255, 130, 130, 1) 4%, rgba(255, 170, 176, 1) 7%);
+  background: rgb(144, 20, 134);
+  background: radial-gradient(circle, rgba(144, 20, 134, 1) 0%, rgba(27, 8, 36, 1) 100%);
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 1rem;
@@ -13,7 +13,11 @@
 
 .App__link {
   text-decoration: none;
-  display: block
+  display: block;
+}
+
+.App__logo:hover{
+  cursor: pointer;
 }
 
 .App__logo {

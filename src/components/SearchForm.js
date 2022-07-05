@@ -1,55 +1,25 @@
 import { useLocation } from "wouter";
-import { memo, useReducer } from "react";
+import { memo } from "react";
+import useForm from "hooks/useForm";
 import "components/SearchForm.css";
-
 const RATINGS = ["g", "pg", "pg-13", "r"];
-const ACTIONS = {
-  UPDATE_KEYWORD: "update_keyword",
-  UPDATE_RATING: "update_rating",
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case ACTIONS.UPDATE_RATING:
-      return {
-        ...state,
-        rating: action.payload,
-      };
-    case ACTIONS.UPDATE_KEYWORD:
-      return {
-        ...state,
-        keyword: action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
 function SearchForm({ initialKeyword = "", initialRating = "g" }) {
+  const { keyword, rating, update_keyword, update_rating } = useForm({
+    initialKeyword: initialKeyword,
+    initialRating: initialRating,
+  });
   // eslint-disable-next-line
   const [path, pushLocation] = useLocation();
   const handleSubmit = (event) => {
     event.preventDefault();
-    pushLocation(`/search/${state.keyword}/${state.rating}`);
+    pushLocation(`/search/${keyword}/${rating}`);
   };
   const handleChange = (event) => {
-    dispatch({
-      type: ACTIONS.UPDATE_KEYWORD,
-      payload: event.target.value,
-    });
+    update_keyword(event.target.value);
   };
   const handleChangeRating = (event) => {
-    dispatch({
-      type: ACTIONS.UPDATE_RATING,
-      payload: event.target.value,
-    });
+    update_rating(event.target.value);
   };
-
-  const [state, dispatch] = useReducer(reducer, {
-    keyword: decodeURIComponent(initialKeyword),
-    rating: initialRating,
-  });
-
   return (
     <div className="block">
       <form onSubmit={handleSubmit} className="search__form">
@@ -57,10 +27,14 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
           className="search__input"
           placeholder="Buscate un gif"
           type="text"
-          value={state.keyword}
+          value={keyword}
           onChange={handleChange}
         />
-        <select onChange={handleChangeRating} className="search__select" value={state.rating}>
+        <select
+          onChange={handleChangeRating}
+          className="search__select"
+          value={rating}
+        >
           <option disabled>Selecciona el rating</option>
           {RATINGS.map((rating) => (
             <option key={rating} value={rating}>
