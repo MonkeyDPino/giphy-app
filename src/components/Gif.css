@@ -2,6 +2,13 @@
     position: relative;
 }
 
+.gif__buttons{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+}
+
 .gif {
     display: block;
     position: relative;
