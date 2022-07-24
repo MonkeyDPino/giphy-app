@@ -11,16 +11,19 @@ function useUser() {
     logIn({email: email, password: password})
     .then((result) => {
       setState((prevValues)=> {return {...prevValues,isLoading:false}})
+      window.sessionStorage.setItem("jwt",result)
       setJWT(result)
     })
     .catch(error => { 
       setState({isLoading: false,isErrorLogin:true})
+      window.sessionStorage.removeItem("jwt")
       console.error(error)
     })
 
   }, [setJWT]);
 
   const logout = useCallback(() => {
+    window.sessionStorage.removeItem("jwt")
     setJWT(null);
   }, [setJWT]);
 
