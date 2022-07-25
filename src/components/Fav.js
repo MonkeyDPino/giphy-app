@@ -1,21 +1,23 @@
 import { useCallback } from "react";
 import useUser from "hooks/useUser";
 import { useLocation } from "wouter";
-import "./Fav.css"
+import "./Fav.css";
 
 function Fav({ id }) {
-  const { isLogged } = useUser();
+  const { isLogged, addFavs, isFaved, deleteFavs } = useUser();
   const [, navigate] = useLocation();
 
   const handleClick = useCallback(() => {
     if (!isLogged) return navigate("/login");
-    alert(id);
-  }, [id]);
+    if (!isFaved(id)) return addFavs(id);
+    deleteFavs(id);
+  }, [id, isLogged, navigate, addFavs, deleteFavs, isFaved]);
 
+  const [label, emoji] = isFaved(id) ? ["UnFav Gif", "❌"] : ["Fav Gif", "💗"];
   return (
     <button className="fav__button" onClick={handleClick}>
-      <span aria-label="Fav Gif" role="img">
-        ❤
+      <span aria-label={label} role="img">
+        {emoji}
       </span>
     </button>
   );
