@@ -1,4 +1,4 @@
-const Endpoint = "http://localhost:5000"
+const Endpoint = "https://giphy-back.herokuapp.com"
 
 export default function login({email, password}){
     return fetch(`${Endpoint}/api/auth/login`,{
