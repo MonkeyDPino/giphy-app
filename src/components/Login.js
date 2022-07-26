@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import useUser from "hooks/useUser";
 import { useLocation } from "wouter";
+import "./Login.css";
 
 function Login() {
   const [, navigate] = useLocation();
@@ -32,25 +33,36 @@ function Login() {
 
   return (
     <>
-      <h2>Login</h2>
       {isLoading && <span>Checking...</span>}
       {!isLoading && (
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={handleChange}
-            value={values.email}
-            type="text"
-            name="email"
-            placeholder="Email"
-          ></input>
-          <input
-            onChange={handleChange}
-            value={values.password}
-            type="password"
-            name="password"
-            placeholder="Password"
-          ></input>
-          <button type="submit" name="login">
+        <form className="login__form" onSubmit={handleSubmit}>
+          <label className="login__label" for="email">
+            Email
+            <input
+              onChange={handleChange}
+              value={values.email}
+              type="text"
+              id="email"
+              name="email"
+              className="login__input"
+              placeholder="Email"
+            ></input>
+          </label>
+
+          <label className="login__label" for="password">
+            Password
+            <input
+              onChange={handleChange}
+              value={values.password}
+              type="password"
+              id="password"
+              name="password"
+              className="login__input"
+              placeholder="Password"
+            ></input>
+          </label>
+
+          <button type="submit" className="login__button" name="login">
             Login
           </button>
         </form>

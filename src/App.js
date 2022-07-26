@@ -3,7 +3,7 @@ import "App.css";
 // import Search from "pages/Search";
 // import DetailsGif from "pages/Details";
 import Header from "components/Header"
-import Login from "pages/Login"
+import LoginPage from "pages/LoginPage"
 import { Link, Route } from "wouter";
 import {UserContext} from "context/UserContext";
 import { Suspense, lazy } from "react";
@@ -23,7 +23,7 @@ function App() {
               <img className="App__logo" alt="Logo" src="/logo3.png" />
             </Link>
             <Route path="/" component={Home} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={LoginPage} />
             <Route path="/gif/:id" component={DetailsGif} />
             <Route path="/search/:keyword/:rating?" component={Search} />
           </section>
