@@ -1,0 +1,34 @@
+.modal {
+    background:rgba(255,255,255,0.3);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.modal__content {
+    background: rgb(144, 20, 134);
+    background: radial-gradient(circle, rgba(144, 20, 134, 1) 0%, rgba(27, 8, 36, 1) 100%);
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+.modal__close {
+    display: block;
+    background: linear-gradient(to bottom, #f51616 5%, #e30c1e 100%);
+    background-color: #f51616;
+    border-radius: 12px;
+    border-width: 0px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #854629;
+}
