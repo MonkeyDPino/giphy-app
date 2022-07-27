@@ -8,7 +8,7 @@ function Category({keywords,name}) {
       <ul>
         {keywords.map((gif) => (
           <li key={gif}>
-            <Link to={`/search/${gif}`}>Gifs de {gif}</Link>
+            <Link to={`/search/${gif}`}>{gif}</Link>
           </li>
         ))}
       </ul>
