@@ -20,7 +20,7 @@ function App() {
           <section className="App-content">
             <Header/>
             <Link to="/" className="App__link">
-              <img className="App__logo" alt="Logo" src="/logo3.png" />
+              <img className="App__logo" alt="Logo" src="/logo.png" />
             </Link>
             <Route path="/" component={Home} />
             <Route path="/login" component={LoginPage} />
