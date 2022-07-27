@@ -33,6 +33,7 @@ function Login() {
 
   return (
     <>
+      <h2>Login</h2>
       {isLoading && <span>Checking...</span>}
       {!isLoading && (
         <form className="login__form" onSubmit={handleSubmit}>

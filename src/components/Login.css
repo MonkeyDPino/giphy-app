@@ -8,6 +8,11 @@ span {
     color:#fff;
 }
 
+h2{
+    text-align:center;
+   color:#fff; 
+}
+
 .login__input{
     overflow:hidden;
     width: 100%;

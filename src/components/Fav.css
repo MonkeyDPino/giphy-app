@@ -3,7 +3,8 @@
     border: 0;
     background-color: rgba(101, 19, 104, 0.596);
     cursor: pointer;
-    font-size:16px;
+    padding: 10px;
+    font-size:18px;
 }
 
 .fav__button:hover{

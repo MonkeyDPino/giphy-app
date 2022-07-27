@@ -21,30 +21,33 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
     update_rating(event.target.value);
   };
   return (
-    <div className="block">
+    <>
       <form onSubmit={handleSubmit} className="search__form">
         <input
-          className="search__input"
+          className="search__input appearance"
           placeholder="Buscate un gif"
           type="text"
           value={keyword}
           onChange={handleChange}
         />
-        <select
-          onChange={handleChangeRating}
-          className="search__select"
-          value={rating}
-        >
-          <option disabled>Selecciona el rating</option>
-          {RATINGS.map((rating) => (
-            <option key={rating} value={rating}>
-              {rating}
-            </option>
-          ))}
-        </select>
-        <button className="search__button">Buscar</button>
+        <div className="search__selectCont">
+          <select
+            onChange={handleChangeRating}
+            className="search__select"
+            value={rating}
+          >
+            <option disabled>Selecciona el rating</option>
+            {RATINGS.map((rating) => (
+              <option key={rating} value={rating}>
+                {rating}
+              </option>
+            ))}
+          </select>
+          <span class="focus"></span>
+        </div>
+        <button className="search__button appearance">Buscar</button>
       </form>
-    </div>
+    </>
   );
 }
 
