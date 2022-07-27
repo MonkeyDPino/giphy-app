@@ -4,6 +4,7 @@ import "App.css";
 // import DetailsGif from "pages/Details";
 import Header from "components/Header"
 import LoginPage from "pages/LoginPage"
+import RegisterPage from "pages/RegisterPage"
 import { Link, Route } from "wouter";
 import {UserContext} from "context/UserContext";
 import { Suspense, lazy } from "react";
@@ -24,6 +25,7 @@ function App() {
             </Link>
             <Route path="/" component={Home} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
             <Route path="/gif/:id" component={DetailsGif} />
             <Route path="/search/:keyword/:rating?" component={Search} />
           </section>

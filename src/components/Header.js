@@ -5,10 +5,11 @@ import useUser from "hooks/useUser";
 
 function Header() {
   const { isLogged, logout } = useUser();
-  const [match] = useRoute("/login");
+  const [matchLogin] = useRoute("/login");
+  const [matchRegister] = useRoute("/register");
 
-  const content = useMemo(() => {
-    return !match ? (
+  const loginContent = useMemo(() => {
+    return !matchLogin ? (
       isLogged ? (
         <button className="header__logout" onClick={logout}>
           Logout
@@ -17,9 +18,23 @@ function Header() {
         <Link to="/login">Login</Link>
       )
     ) : null;
-  },[match, isLogged, logout]);
+  },[matchLogin, isLogged, logout]);
 
-  return <header className="gf__header">{content}</header>;
+  const regContent = useMemo(() => {
+    return !matchRegister ? (
+      isLogged ? (
+        null
+      ) : (
+        <Link to="/register">Register</Link>
+      )
+    ) : null;
+  },[matchRegister, isLogged]);
+
+
+  return <header className="gf__header">
+    {regContent}
+    {loginContent}
+  </header>;
 }
 
 export default Header;

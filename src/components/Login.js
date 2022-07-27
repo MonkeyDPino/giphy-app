@@ -37,7 +37,7 @@ function Login() {
       {isLoading && <span>Checking...</span>}
       {!isLoading && (
         <form className="login__form" onSubmit={handleSubmit}>
-          <label className="login__label" for="email">
+          <label className="login__label" htmlFor="email">
             Email
             <input
               onChange={handleChange}
@@ -50,7 +50,7 @@ function Login() {
             ></input>
           </label>
 
-          <label className="login__label" for="password">
+          <label className="login__label" htmlFor="password">
             Password
             <input
               onChange={handleChange}

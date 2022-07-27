@@ -1,0 +1,10 @@
+.input__error__message{
+    display:block;
+    color: rgb(255, 44, 44);
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.input__error{
+    outline:2px solid rgb(255, 44, 44);
+}

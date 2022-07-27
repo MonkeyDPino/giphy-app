@@ -8,6 +8,10 @@
     color: #fff;
 }
 
+.gf__header a + a {
+    margin-left: 10px;
+}
+
 .gf__header a:hover {
     text-decoration: underline;
 }
