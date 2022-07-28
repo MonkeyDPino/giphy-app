@@ -7,13 +7,18 @@
 }
 
 .category__title{
-    color: #000;
+    color: #fff;
 }
 
 .category li {
     font-size: 20px;
-    color: #000;
+    color: #fff;
 }
+
+.category a:hover{
+    text-decoration: underline;
+}
+
 .category li a{
-    color: #000;
+    color: #fff;
 }
