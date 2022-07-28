@@ -9,7 +9,7 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
     initialRating: initialRating,
   });
   // eslint-disable-next-line
-  const [path, pushLocation] = useLocation();
+  const [, pushLocation] = useLocation();
   const handleSubmit = (event) => {
     event.preventDefault();
     pushLocation(`/search/${keyword}/${rating}`);
@@ -43,7 +43,7 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
               </option>
             ))}
           </select>
-          <span class="focus"></span>
+          <span className="focus"></span>
         </div>
         <button className="search__button appearance">Buscar</button>
       </form>
