@@ -9,6 +9,6 @@ function TrendingSearches() {
     GetTrendingTerms().then((result) => SetTerms(result));
   }, []);
 
-  return <Category name="Tendencias en Giphy" keywords={terms} />;
+  return <Category name="Giphy Trends" keywords={terms} />;
 }
 export default TrendingSearches;

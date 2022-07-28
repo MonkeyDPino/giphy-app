@@ -17,11 +17,11 @@ function Home() {
       <SearchForm />
       <div className="home__container">
         <div className="home__Search">
-          <h3 className="home__title">Última Busqueda</h3>
+          <h3 className="home__title">Last Search</h3>
           <ListOfGifs loading={loading} gifs={gifs} />
         </div>
         <div className="home__trends">
-          <Category name="Gifs Populares" keywords={popular_gifs} />
+          <Category name="Popular gifs" keywords={popular_gifs} />
           <TrendingSearchesLazy />
         </div>
       </div>

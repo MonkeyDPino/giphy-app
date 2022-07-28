@@ -36,22 +36,30 @@ function useUser() {
   }, [setJWT]);
 
   const addFavs = useCallback(
-    (id) => {
+    (id, setLoading) => {
       addFav({ id: id, jwt: jwt })
-        .then(setFavs)
+        .then((res) => {
+          setFavs(res);
+          setLoading(false);
+        })
         .catch((error) => {
           console.error(error);
+          setLoading(false);
         });
     },
     [setFavs, jwt]
   );
 
   const deleteFavs = useCallback(
-    (id) => {
+    (id, setLoading) => {
       deleteFav({ id: id, jwt: jwt })
-        .then(setFavs)
+        .then((res) => {
+          setFavs(res);
+          setLoading(false);
+        })
         .catch((error) => {
           console.error(error);
+          setLoading(false);
         });
     },
     [setFavs, jwt]

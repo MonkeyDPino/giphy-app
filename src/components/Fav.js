@@ -7,11 +7,13 @@ import "./Fav.css";
 function Fav({ id }) {
   const { isLogged, addFavs, isFaved, deleteFavs } = useUser();
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleClick = useCallback(() => {
     if (!isLogged) return setShowModal(true);
-    if (!isFaved(id)) return addFavs(id);
-    deleteFavs(id);
+    setLoading(true);
+    if (!isFaved(id)) return addFavs(id,setLoading);
+    deleteFavs(id,setLoading);
   }, [id, isLogged, addFavs, deleteFavs, isFaved]);
 
   const closeModal = useCallback(() => {
@@ -19,18 +21,22 @@ function Fav({ id }) {
   }, [setShowModal]);
 
   useEffect(() => {
-    if(isLogged && showModal)setShowModal(false);
-  },[isLogged,showModal,setShowModal]);
+    if (isLogged && showModal) setShowModal(false);
+  }, [isLogged, showModal, setShowModal]);
 
   const [label, emoji] = isFaved(id) ? ["UnFav Gif", "❌"] : ["Fav Gif", "💗"];
   return (
     <>
-      <button className="fav__button" onClick={handleClick}>
+      <button className="fav__button" disabled={loading} onClick={handleClick}>
         <span aria-label={label} role="img">
-          {emoji}
+          {loading? "🕖":emoji}
         </span>
       </button>
-      {showModal && <Modal onClose={closeModal}><Login/></Modal>}
+      {showModal && (
+        <Modal onClose={closeModal}>
+          <Login />
+        </Modal>
+      )}
     </>
   );
 }

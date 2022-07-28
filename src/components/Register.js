@@ -16,7 +16,6 @@ function Register() {
   } = useForm();
 
   const onSubmit = (values) => {
-    console.log(values)
     if (values.password !== values.passwordConf) {
       return setSamePass(true);
     } else if (samePass) {
@@ -26,7 +25,6 @@ function Register() {
     registerService(values)
       .then((res) => {
         setLoading(false);
-        console.log(res)
         if (res.email) return setRegistered(true);
         return setRegisteredError(true);
       })

@@ -36,7 +36,7 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
             className="search__select"
             value={rating}
           >
-            <option disabled>Selecciona el rating</option>
+            <option disabled>Select Rating</option>
             {RATINGS.map((rating) => (
               <option key={rating} value={rating}>
                 {rating}
@@ -45,7 +45,7 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
           </select>
           <span className="focus"></span>
         </div>
-        <button className="search__button appearance">Buscar</button>
+        <button className="search__button appearance">Search</button>
       </form>
     </>
   );
