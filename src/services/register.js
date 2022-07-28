@@ -1,4 +1,4 @@
-const Endpoint = "http://giphy-back.herokuapp.com"
+const Endpoint = "https://giphy-back.herokuapp.com"
 
 export default function register({email, password}){
     return fetch(`${Endpoint}/api/auth/register`,{
