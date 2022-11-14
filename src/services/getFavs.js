@@ -1,7 +1,5 @@
-const Endpoint = "https://giphy-back.herokuapp.com";
-
 export default function getFavs({ jwt }) {
-  return fetch(`${Endpoint}/api/user/fav`, {
+  return fetch(`${process.env.REACT_APP_ENDPOINT}/api/user/fav`, {
     method: "GET",
     headers: { "Content-Type": "application/json", jwt: jwt },
   })

@@ -1,7 +1,5 @@
-import { API_KEY } from "./settings";
-
 function getSingleGif(id) {
-  const url = `https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`;
+  const url = `https://api.giphy.com/v1/gifs/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
 
   return fetch(url)
     .then((res) => res.json())

@@ -1,7 +1,5 @@
-import {API_KEY} from "./settings"
-
 export default function GetGifs({keyword ="NotFound", page=0, limit=5, rating} = {}) {
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${limit*page}&rating=${rating}&lang=en`
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${keyword}&limit=${limit}&offset=${limit*page}&rating=${rating}&lang=en`
 
   return fetch(url)
     .then((res) => res.json())

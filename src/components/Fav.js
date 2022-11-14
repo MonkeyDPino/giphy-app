@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect,memo } from "react";
 import useUser from "hooks/useUser";
 import Modal from "components/Modal";
 import Login from "components/Login";
@@ -11,10 +11,11 @@ function Fav({ id }) {
 
   const handleClick = useCallback(() => {
     if (!isLogged) return setShowModal(true);
+    if (loading) return;
     setLoading(true);
     if (!isFaved(id)) return addFavs(id,setLoading);
-    deleteFavs(id,setLoading);
-  }, [id, isLogged, addFavs, deleteFavs, isFaved]);
+    return deleteFavs(id,setLoading);
+  }, [id, isLogged, addFavs, deleteFavs, isFaved, loading]);
 
   const closeModal = useCallback(() => {
     setShowModal(false);
@@ -41,4 +42,4 @@ function Fav({ id }) {
   );
 }
 
-export default Fav;
+export default memo(Fav);

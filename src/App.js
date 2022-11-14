@@ -1,7 +1,4 @@
 import "App.css";
-// import Home from "pages/Home";
-// import Search from "pages/Search";
-// import DetailsGif from "pages/Details";
 import Header from "components/Header"
 import LoginPage from "pages/LoginPage"
 import RegisterPage from "pages/RegisterPage"

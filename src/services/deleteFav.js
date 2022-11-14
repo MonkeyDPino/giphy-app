@@ -1,7 +1,5 @@
-const Endpoint = "https://giphy-back.herokuapp.com";
-
 export default function deleteFav({ id,jwt }) {
-  return fetch(`${Endpoint}/api/user/fav`, {
+  return fetch(`${process.env.REACT_APP_ENDPOINT}/api/user/fav`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json", jwt: jwt },
     body: JSON.stringify({ id: id})

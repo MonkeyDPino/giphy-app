@@ -1,7 +1,5 @@
-const Endpoint = "https://giphy-back.herokuapp.com"
-
 export default function login({email, password}){
-    return fetch(`${Endpoint}/api/auth/login`,{
+    return fetch(`${process.env.REACT_APP_ENDPOINT}/api/auth/login`,{
         method: 'POST',
         headers: {'Content-Type':"application/json"},
         body:JSON.stringify({"email":email,"password":password})

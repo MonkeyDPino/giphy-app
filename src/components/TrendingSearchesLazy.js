@@ -6,6 +6,7 @@ const TrendingSearches = lazy(() => import("components/TrendingSearches"));
 
 function LazyTrendingSearch() {
   const { elementRef, show } = useNearScreen({ distance: "100px" });
+
   return (
     <div ref={elementRef}>
       <Suspense fallback={<Spinner />}>
