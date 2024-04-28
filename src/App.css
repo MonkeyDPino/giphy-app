@@ -4,7 +4,7 @@
 
 .App-content {
   background: rgb(144, 20, 134);
-  background: radial-gradient(circle, rgba(144, 20, 134, 1) 0%, rgba(27, 8, 36, 1) 100%);
+  /* background: radial-gradient(circle, #901486 0%, rgba(27, 8, 36, 1) 100%); */
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 1rem;
