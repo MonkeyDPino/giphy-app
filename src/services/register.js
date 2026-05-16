@@ -1,5 +1,5 @@
 export default function register({email, password}){
-    return fetch(`${process.env.REACT_APP_ENDPOINT}/api/auth/register`,{
+    return fetch(`${import.meta.env.VITE_ENDPOINT}/api/auth/register`,{
         method: 'POST',
         headers: {'Content-Type':"application/json"},
         body:JSON.stringify({"email":email,"password":password})

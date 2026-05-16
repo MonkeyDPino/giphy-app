@@ -1,5 +1,5 @@
 export default function getFavs({ jwt }) {
-  return fetch(`${process.env.REACT_APP_ENDPOINT}/api/user/fav`, {
+  return fetch(`${import.meta.env.VITE_ENDPOINT}/api/user/fav`, {
     method: "GET",
     headers: { "Content-Type": "application/json", jwt: jwt },
   })

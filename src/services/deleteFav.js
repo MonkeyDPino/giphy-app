@@ -1,5 +1,5 @@
 export default function deleteFav({ id,jwt }) {
-  return fetch(`${process.env.REACT_APP_ENDPOINT}/api/user/fav`, {
+  return fetch(`${import.meta.env.VITE_ENDPOINT}/api/user/fav`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json", jwt: jwt },
     body: JSON.stringify({ id: id})
