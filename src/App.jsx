@@ -1,9 +1,9 @@
 import "App.css";
-import Header from "components/Header"
-import LoginPage from "pages/LoginPage"
-import RegisterPage from "pages/RegisterPage"
-import { Link, Route } from "wouter";
-import {UserContext} from "context/UserContext";
+import Header from "components/Header";
+import LoginPage from "pages/LoginPage";
+import RegisterPage from "pages/RegisterPage";
+import { Route } from "wouter";
+import { UserContext } from "context/UserContext";
 import { Suspense, lazy } from "react";
 
 const Search = lazy(() => import("pages/Search"));
@@ -15,11 +15,8 @@ function App() {
     <UserContext>
       <div className="App">
         <Suspense fallback={null}>
+          <Header />
           <section className="App-content">
-            <Header/>
-            <Link to="/" className="App__link">
-              <img className="App__logo" alt="Logo" src="/logo.png" />
-            </Link>
             <Route path="/" component={Home} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />

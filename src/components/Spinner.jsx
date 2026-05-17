@@ -1,13 +1,9 @@
 import "./Spinner.css";
+
 function Spinner() {
   return (
-    <div className="loadingio-spinner-dual-ring-lk6f0vsmecm">
-      <div className="ldio-lufhq2juea">
-        <div></div>
-        <div>
-          <div></div>
-        </div>
-      </div>
+    <div className="spinner-wrapper">
+      <div className="spinner" role="status" aria-label="Loading" />
     </div>
   );
 }

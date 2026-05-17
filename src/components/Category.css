@@ -1,24 +1,38 @@
-/* CSS by GenerateCSS.com */
+.category {
+  margin-bottom: 2rem;
+}
+
+.category__title {
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
 .category ul {
-    list-style-type: inherit;
-    list-style-position: inside;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.category__title{
-    color: #fff;
+.category li a {
+  display: block;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  transition: color 180ms ease, background 180ms ease;
 }
 
-.category li {
-    font-size: 20px;
-    color: #fff;
-}
-
-.category a:hover{
-    text-decoration: underline;
-}
-
-.category li a{
-    color: #fff;
+.category li a:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }

@@ -1,12 +1,52 @@
-.fav__button{
-    border-radius: 100px;
-    border: 0;
-    background-color: rgba(101, 19, 104, 0.596);
-    cursor: pointer;
-    padding: 10px;
-    font-size:18px;
+.fav__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  padding: 0;
+  transition: background 200ms ease, transform 150ms ease;
 }
 
-.fav__button:hover{
-    background-color: rgba(101, 19, 104, 0.9);
+.fav__button:hover:not(:disabled) {
+  background: rgba(10, 10, 15, 0.9);
+  transform: scale(1.1);
+}
+
+.fav__button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.fav__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  transition: transform 200ms ease;
+}
+
+.fav__button:hover:not(:disabled) .fav__icon {
+  transform: scale(1.15);
+}
+
+.fav__icon--faved {
+  color: var(--accent-pink);
+}
+
+.fav__icon--unfaved {
+  color: var(--text-secondary);
+}
+
+.fav__icon--loading {
+  color: var(--text-muted);
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

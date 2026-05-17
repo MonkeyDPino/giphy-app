@@ -35,21 +35,27 @@ function Register() {
       });
   };
 
-  if(loading){
-    return<><h2>Register Form</h2>
-    <span>Registering...</span>
-    </>
+  if (loading) {
+    return (
+      <>
+        <h2 className="login__heading">Register</h2>
+        <span className="login__checking">Registering...</span>
+      </>
+    );
   }
 
-  if(registered){
-    return<><h2>Register Form</h2>
-    <span>You've been registered correctly ✅</span>
-    </>
+  if (registered) {
+    return (
+      <>
+        <h2 className="login__heading">Register</h2>
+        <span className="login__checking">You've been registered correctly.</span>
+      </>
+    );
   }
 
   return (
     <>
-      <h2>Register Form</h2>
+      <h2 className="login__heading">Register</h2>
       <form className="login__form" onSubmit={handleSubmit(onSubmit)}>
         <label className="login__label" htmlFor="email">
           Email
@@ -57,12 +63,10 @@ function Register() {
             id="email"
             type="email"
             className={`login__input ${errors.email ? "input__error" : ""}`}
-            placeholder="Email"
+            placeholder="you@example.com"
+            autoComplete="email"
             {...register("email", {
-              required: {
-                value: true,
-                message: "required",
-              },
+              required: { value: true, message: "Email is required" },
             })}
           ></input>
         </label>
@@ -77,20 +81,12 @@ function Register() {
             id="password"
             type="password"
             className={`login__input ${errors.password ? "input__error" : ""}`}
-            placeholder="Password"
+            placeholder="••••••••"
+            autoComplete="new-password"
             {...register("password", {
-              required: {
-                value: true,
-                message: "required",
-              },
-              maxLength: {
-                value: 20,
-                message: "max length 20",
-              },
-              minLength: {
-                value: 5,
-                message: "min length 5",
-              },
+              required: { value: true, message: "Password is required" },
+              maxLength: { value: 20, message: "Max 20 characters" },
+              minLength: { value: 5, message: "Min 5 characters" },
             })}
           ></input>
         </label>
@@ -107,20 +103,12 @@ function Register() {
             className={`login__input ${
               errors.passwordConf ? "input__error" : ""
             }`}
-            placeholder="Confirm Password"
+            placeholder="••••••••"
+            autoComplete="new-password"
             {...register("passwordConf", {
-              required: {
-                value: true,
-                message: "required",
-              },
-              maxLength: {
-                value: 20,
-                message: "max length 20",
-              },
-              minLength: {
-                value: 5,
-                message: "min length 5",
-              },
+              required: { value: true, message: "Please confirm your password" },
+              maxLength: { value: 20, message: "Max 20 characters" },
+              minLength: { value: 5, message: "Min 5 characters" },
             })}
           ></input>
         </label>
@@ -130,12 +118,12 @@ function Register() {
           </small>
         )}
         {samePass && (
-          <small className="input__error__message">password conflict</small>
+          <small className="input__error__message">Passwords do not match</small>
         )}
-        <button className="login__button"> Register </button>
+        <button className="login__button">Register</button>
         {registeredError && (
           <small className="input__error__message">
-            something wrong in register
+            Something went wrong. Please try again.
           </small>
         )}
       </form>

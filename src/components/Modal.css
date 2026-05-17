@@ -1,35 +1,65 @@
 .modal {
-    background:rgba(255,255,255,0.3);
-    backdrop-filter: blur(2px);
-    position: fixed;
-    display: flex;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
-    padding: 15px;
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: modal-fade-in 200ms ease;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .modal__content {
-    background: rgb(144, 20, 134);
-    background: radial-gradient(circle, rgba(144, 20, 134, 1) 0%, rgba(27, 8, 36, 1) 100%);
-    width: 400px;
-    margin: auto;
-    padding: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px 28px;
+  box-shadow: var(--shadow-lg);
+  animation: modal-slide-in 220ms ease;
+}
+
+@keyframes modal-slide-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .modal__close {
-    display: block;
-    background: linear-gradient(to bottom, #f51616 5%, #e30c1e 100%);
-    background-color: #f51616;
-    border-radius: 12px;
-    border-width: 0px;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    padding: 6px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #854629;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+  padding: 0;
+}
+
+.modal__close:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+}
+
+.modal__close svg {
+  width: 16px;
+  height: 16px;
+  display: block;
 }

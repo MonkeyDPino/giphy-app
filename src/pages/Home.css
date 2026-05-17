@@ -1,23 +1,51 @@
+.home__search-hero {
+  padding: 40px 0 32px;
+  text-align: center;
+}
+
+.home__search-hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
 
 .home__container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.home__Search {
+  flex: 1;
+  min-width: 0;
+}
+
+.home__title {
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0;
 }
 
 .home__trends {
-    padding-left: 3rem;
-
+  width: 220px;
+  flex-shrink: 0;
+  padding-top: 1.5rem;
 }
 
-@media (min-width: 900px) {
-    .home__container {
-        display: flex;
-        flex-direction: row;
-    }
-    .home__trends {
-        width: 25%;
-    }
-    .home__Search{
-        width: 75%;
-    }
+@media (max-width: 900px) {
+  .home__container {
+    flex-direction: column;
+  }
+  .home__trends {
+    width: 100%;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
 }

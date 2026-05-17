@@ -1,34 +1,65 @@
-.gif__container{
-    position: relative;
+.gif__container {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+  break-inside: avoid;
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
-.gif__buttons{
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    z-index: 1;
-    padding: 0;
-    margin: 0;
+.gif__container:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gif__buttons {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
 }
 
 .gif {
-    display: block;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .gif img {
-    width: 100%;
-    object-fit: contain;
-    vertical-align: top;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  vertical-align: top;
+  display: block;
+  transition: transform 300ms ease;
+}
+
+.gif__container:hover .gif img {
+  transform: scale(1.03);
 }
 
 .gif h4 {
-    background: rgba(0, 0, 0, .3);
-    bottom: 0;
-    font-size: 12px;
-    color: #fff;
-    margin: 0;
-    position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 10px 8px;
+  font-size: 11px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gif__container:hover .gif h4 {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -13,16 +13,21 @@ function Home() {
 
   return (
     <>
-    <Title title="Home | Giphy"/>
-      <SearchForm />
-      <div className="home__container">
-        <div className="home__Search">
-          <h3 className="home__title">Last Search</h3>
-          <ListOfGifs loading={loading} gifs={gifs} />
+      <Title title="Home | Giphy" />
+      <div className="page-container">
+        <div className="home__search-hero">
+          <h1>Find the perfect GIF</h1>
+          <SearchForm />
         </div>
-        <div className="home__trends">
-          <Category name="Popular gifs" keywords={popular_gifs} />
-          <TrendingSearchesLazy />
+        <div className="home__container">
+          <div className="home__Search">
+            <p className="home__title">Trending</p>
+            <ListOfGifs loading={loading} gifs={gifs} />
+          </div>
+          <aside className="home__trends">
+            <Category name="Popular" keywords={popular_gifs} />
+            <TrendingSearchesLazy />
+          </aside>
         </div>
       </div>
     </>

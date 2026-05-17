@@ -25,7 +25,7 @@ function SearchForm({ initialKeyword = "", initialRating = "g" }) {
       <form onSubmit={handleSubmit} className="search__form">
         <input
           className="search__input appearance"
-          placeholder="Buscate un gif"
+          placeholder="Search for a GIF..."
           type="text"
           value={keyword}
           onChange={handleChange}

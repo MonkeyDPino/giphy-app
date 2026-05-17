@@ -1,33 +1,87 @@
 .gf__header {
-    display: flex;
-    justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
 }
 
-.gf__header a {
-    font-size: 16px;
-    color: #fff;
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
 
-.gf__header a + a {
-    margin-left: 10px;
+.header__wordmark {
+  font-family: 'Righteous', sans-serif;
+  font-size: 28px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 200ms ease;
+  line-height: 1;
 }
 
-.gf__header a:hover {
-    text-decoration: underline;
+.header__brand:hover .header__wordmark {
+  opacity: 0.85;
 }
 
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__nav a,
 .header__logout {
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    font-size: 16px;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-.header__logout:hover{
-    text-decoration: underline;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 7px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
 }
 
+.header__nav a:hover,
+.header__logout:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-elevated);
+}
+
+.header__nav a.header__nav--primary {
+  color: var(--text-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.header__nav a.header__nav--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .gf__header {
+    padding: 0 16px;
+  }
+  .header__nav a,
+  .header__logout {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

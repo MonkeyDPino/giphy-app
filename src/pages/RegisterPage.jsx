@@ -5,7 +5,9 @@ function RegisterPage() {
   return (
     <>
       <Title title="Register | Giphy" />
-      <Register />
+      <div className="page-container">
+        <Register />
+      </div>
     </>
   );
 }

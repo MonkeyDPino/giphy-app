@@ -1,23 +1,25 @@
-:root {
-  --gridList-column: 250px;
-  --gridList-rows: 250px;
-  --gridList-gap: 6px;
+.ListOfGifs {
+  min-height: 60vh;
 }
-.ListOfGifs{
-  min-height:100vh;
-}
+
 .List__container {
-    margin-top:1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap: 0.5rem;
-    align-items: center;
-    /* min-height: 100vh;
-    grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
-    grid-auto-rows: var(--gridList-rows);
-    grid-template-rows: masonry;
-    grid-auto-flow: row dense;
-    grid-gap: var(--gridList-gap, 6px);
-    gap: var(--gridList-gap, 6px);
-    align-items: center; */
+  margin-top: 1.5rem;
+  columns: 3 250px;
+  column-gap: 12px;
+}
+
+.List__container > * {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+  .List__container {
+    columns: 2 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .List__container {
+    columns: 1;
+  }
 }

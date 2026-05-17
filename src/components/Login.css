@@ -1,48 +1,86 @@
-.login__label{
-    font-size:15px;
-    color:#fff;
-    align-items: center;
+.login__heading {
+  text-align: center;
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
 }
 
-span {
-    color:#fff;
+.login__checking {
+  display: block;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 16px 0;
 }
 
-h2{
-    text-align:center;
-   color:#fff; 
+.login__error {
+  display: block;
+  text-align: center;
+  color: var(--error);
+  font-size: 13px;
+  margin-top: 12px;
 }
 
-.login__input{
-    overflow:hidden;
-    width: 100%;
-    box-sizing: border-box;
-    margin:10px 0;
-    border-radius: 12px;
-    line-height:2;
-    border: none;
-    padding: 0 12px;
-}
-.login__form{
-    max-width: 450px;
-    display: block;
-    width:100%;
-    margin: 30px auto;
+.login__form {
+  max-width: 360px;
+  width: 100%;
+  margin: 24px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.login__button{
-    overflow:hidden;
-    width: 100%;
-	background:linear-gradient(to bottom, #f51616 5%, #e30c1e 100%);
-	background-color:#f51616;
-    border-radius: 12px;
-    border-width: 0px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-    padding:6px 0;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #854629;
+.login__label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.login__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.login__input::placeholder {
+  color: var(--text-muted);
+}
+
+.login__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.login__button {
+  width: 100%;
+  height: 44px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 200ms ease, transform 150ms ease;
+  margin-top: 4px;
+}
+
+.login__button:hover {
+  background: var(--accent-hover);
+}
+
+.login__button:active {
+  transform: scale(0.98);
 }

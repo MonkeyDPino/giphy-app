@@ -1,10 +1,11 @@
-.input__error__message{
-    display:block;
-    color: rgb(255, 44, 44);
-    font-size:16px;
-    margin-bottom:10px;
+.input__error__message {
+  display: block;
+  color: var(--error);
+  font-size: 12px;
+  margin-top: -8px;
 }
 
-.input__error{
-    outline:2px solid rgb(255, 44, 44);
+.input__error {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
 }
